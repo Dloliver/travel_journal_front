@@ -1,27 +1,24 @@
 import './App.css';
-import {useState} from 'react'
+import {useState, useEffect} from 'react';
 import axios from 'axios';
-// import NewForm from './components/NewForm'
 
 const App = () => {
+  const [logs, setLogs] = useState([])
 
+  useEffect(() => {
+    axios.get('http://localhost:3000/travel-logs')
+    .then(res => {
+      setLogs(res.data);
+    });
+  }, []);
 
-useEffect(()=>{
-  axios
+  return (
+    <main>
+      <h1>Travel Journal</h1>
 
-})
-
-return (
-<main>
-<h1>Travel Journal</h1>
-// <NewForm/>
-
-</main>
-)
-
-
-
-}
+    </main>
+  );
+};
 
 
 export default App;
