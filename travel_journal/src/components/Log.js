@@ -1,5 +1,7 @@
+import UpdateForm from './UpdateForm';
+
 const Log = props => {
-  const {log} = props;
+  const {log, setLogs} = props;
 
   return (
     <div>
@@ -9,6 +11,7 @@ const Log = props => {
       {log.image && <img style={{width: '50vw'}} src={log.image} alt={log.name}/>}
       {log.date && <p>{log.date}</p>}
       {log.rating && <p>Rating: {log.rating}</p>}
+      <UpdateForm log={log} setLogs={setLogs} />
     </div>
   );
 };

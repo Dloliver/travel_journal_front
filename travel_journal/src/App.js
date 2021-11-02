@@ -16,7 +16,7 @@ const App = () => {
   return (
     <main>
       <h1>Travel Journal</h1>
-      <ShowLogs logs={logs}/>
+      <ShowLogs logs={logs} setLogs={setLogs} />
     </main>
   );
 };
